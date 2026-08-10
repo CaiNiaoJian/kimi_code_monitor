@@ -7,7 +7,7 @@
 |------|------|------|
 | `kimi_monitor.py` | 主脚本（单文件，含全部逻辑） | 39 KB |
 | `README.md` | 详细使用文档 | 8 KB |
-| `start.bat` / `start.sh` | 一键启动脚本 | 1 KB |
+| `start.bat`（Windows） / `start.sh` （Linux / macOS）| 一键启动脚本 | 1 KB |
 
 **下载链接**: [kimi-code-monitor 完整包](sandbox:///mnt/agents/output/kimi-code-monitor/kimi_monitor.py)  
 （建议直接下载整个目录使用）
