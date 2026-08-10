@@ -1,0 +1,20 @@
+# Kimi Code 额度监控 - Python 依赖
+# 基础运行: 纯标准库即可，无需安装任何包
+# 以下依赖均为可选增强，建议全部安装以获得最佳体验
+
+# HTTP 请求 (推荐安装，比 urllib 更稳定)
+requests>=2.28.0
+
+# YAML 配置解析 (推荐安装，比 JSON 配置更友好)
+PyYAML>=6.0
+
+# ========== Windows 平台增强 ==========
+# Windows 桌面通知 (比 PowerShell 通知更美观)
+win10toast>=0.9; platform_system=="Windows"
+
+# Windows 语音播报 (SAPI COM 接口)
+pywin32>=227; platform_system=="Windows"
+
+# ========== Linux 平台增强 ==========
+# Linux 语音播报 (espeak-ng 的 Python 封装，可选)
+# py-espeak-ng>=0.3; platform_system=="Linux"
