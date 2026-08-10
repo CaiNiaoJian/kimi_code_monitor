@@ -52,6 +52,15 @@ kimi-code login
 
 # 3. 启动守护模式
 python kimi_monitor.py --daemon
+
+用法:
+    python kimi_monitor.py --init          # 初始化配置
+    python kimi_monitor.py --once          # 单次查询额度
+    python kimi_monitor.py --daemon        # 后台守护模式
+    python kimi_monitor.py --add-task "重构utils.py"  # 添加任务
+    python kimi_monitor.py --list-tasks    # 查看任务队列
+    python kimi_monitor.py --debug         # 调试：查看原始API响应
+
 ```
 
 然后你就可以去干别的了。额度恢复时电脑会**响铃 + 弹窗**，告诉你"可以继续开发了"。
