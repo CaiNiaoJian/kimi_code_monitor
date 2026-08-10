@@ -11,17 +11,60 @@
 | `README.md` | 本文档 | — | — |
 | `start.bat` / `start.sh` | 一键启动脚本 | 1 KB | Windows / Linux / macOS |
 
-**下载链接**:
-- [kimi_monitor.py (基础版)](sandbox:///mnt/agents/output/kimi-code-monitor/kimi_monitor.py)
-- [kimi_monitor_pro.py (Pro 版)](sandbox:///mnt/agents/output/kimi-code-monitor/kimi_monitor_pro.py)
-
 > 💡 **新手建议**: 先用基础版跑通，熟悉后再升级 Pro 版。两个版本独立运行，互不冲突。
+
+搞定了，环境配置全流程已补齐。新增了 4 个文件 + 大幅扩展了 README，让完全不懂 Python 的人也能跟着做。
+
+## 📦 辅助文件
+
+| 文件 | 作用 | 下载 |
+|------|------|------|
+| `requirements.txt` | Python 依赖列表 |
+| `install.bat` | **Windows 双击安装** — 自动创建虚拟环境、装依赖、检查 CLI、初始化配置 |
+| `install.sh` | **Linux/macOS 运行安装** — 同上，支持各发行版 |
+| `start.bat` / `start.sh` | 启动时**自动检测虚拟环境**，优先使用 `venv/` 里的 Python，支持版本选择|
 
 ---
 
+## 🛠️ 环境配置
+
+### 方式一：一键安装（推荐，最简单）
+
+**Windows 用户**：
+1. 安装 Python 3.11（勾选 "Add Python to PATH"）
+2. 把 5 个文件放同一个文件夹
+3. **双击 `install.bat`** → 自动完成一切
+4. **双击 `start.bat`** → 选择 Pro/基础版，开始监控
+
+**macOS/Linux 用户**：
+```bash
+chmod +x install.sh start.sh
+./install.sh   # 自动完成环境配置
+./start.sh     # 启动监控
+```
+### 方式二：手动配置（了解原理）
+
+详细到每一步的教程：
+- Step 1: 检查 Python
+- Step 2: 创建虚拟环境（解释什么是虚拟环境、目录结构）
+- Step 3: 激活虚拟环境（Windows/macOS/Linux 分别说明）
+- Step 4: 安装依赖（含换国内镜像源的提示）
+- Step 5: 验证安装
+
+## 🔧 新增常见问题
+
+专门增加了环境相关的 FAQ：
+
+| 问题 | 解决 |
+|------|------|
+| PowerShell 禁止运行脚本 | `Set-ExecutionPolicy RemoteSigned` |
+| pip 安装很慢 | 换清华镜像 `pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple` |
+| 虚拟环境激活失败 | `chmod +x` 或 PowerShell 执行策略 |
+| 不知道什么是虚拟环境 | README 里解释了：隔离依赖、避免冲突、目录结构图 |
+
 ## 🎯 核心解决思路
 
-你的痛点是"额度用完项目中断，一直等待浪费时间"。脚本用三层机制解决：
+痛点是"额度用完项目中断，一直等待浪费时间"。脚本用三层机制解决：
 
 ### 1. 额度查询层 — 双端点自动降级
 脚本同时尝试两个官方接口获取额度：
@@ -351,10 +394,7 @@ http://你的电脑IP:17421
 
 MIT License — 自由使用、修改、分发。
 
----
 
-> 💡 **提示**: 两个版本均仅查询额度，**不消耗任何模型 Token**。可 7×24 小时安心运行。如有 API 响应字段解析问题，把 `--debug` 的输出发给我，我可以帮你调整适配。
 
----
+> 💡 **提示**: 两个版本均仅查询额度，**不消耗任何模型 Token**。可 7×24 小时安心运行。如有 API 响应字段解析问题，把 `--debug` 的输出发在issues，如果时间允许我可以帮你调整适配。
 
-**下载更新后的 README**: [README.md](sandbox:///mnt/agents/output/kimi-code-monitor/README.md)
